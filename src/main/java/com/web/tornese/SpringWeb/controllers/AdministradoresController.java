@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.web.tornese.SpringWeb.models.Administrador;
@@ -34,4 +35,11 @@ public class AdministradoresController {
     repo.save(administrador);
     return "redirect:/administradores";
   }
+
+  @GetMapping("/administradores/{id}/excluir")
+  public String excluir(@PathVariable int id) {
+      repo.deleteById(id);
+      return "redirect:/administradores";
+  }
+  
 }
