@@ -40,14 +40,15 @@
                             <td th:text="${administrador.id}"></td>
                             <td th:text="${administrador.Nome}"></td>
                             <td th:text="${administrador.email}"></td>
-                            <td><a href="#" class="btn btn-warning">Alterar</a></td>
+                            <td><a th:href="@{'/administradores/' + ${administrador.id}}"
+                                    class="btn btn-warning">Alterar</td>
                             <td>
                                 <a href="#"
-                                   th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administradores/{id}/excluir(id=${administrador.id})} + '\' } '"
-                                   class="btn btn-danger">Excluir</a>
+                                    th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administradores/{id}/excluir(id=${administrador.id})} + '\' } '"
+                                    class="btn btn-danger">Excluir</a>
                             </td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
